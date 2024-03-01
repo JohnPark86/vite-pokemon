@@ -44,6 +44,8 @@ export interface PokemonFormSprites {
 }
 
 export interface PokemonSprites {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [x: string]: any;
   /** The default depiction of this Pokémon from the front in battle */
   front_default: string | null;
   /** The shiny depiction of this Pokémon from the front in battle */
