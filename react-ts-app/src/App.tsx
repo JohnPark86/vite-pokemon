@@ -53,14 +53,34 @@ function App() {
 
   return (
     <>
-      <ImageComponent
-        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
-        styleClass="logo"
-        altText="Classic Pokemon logo in blue and yellow"
-      />
-      <MainInput options={options} handleChange={handleChange} />
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "325px auto",
+          alignItems: "center",
+          backgroundColor: "lightGray",
+          borderRadius: "15px",
+          padding: "1em",
+        }}
+      >
+        <ImageComponent
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+          styleClass="logo"
+          altText="Classic Pokemon logo in blue and yellow"
+        />
+        <MainInput options={options} handleChange={handleChange} />
+      </div>
       {selectedPkmn && (
-        <div style={{border: "2px solid white"}}>
+        <div
+          style={{
+            backgroundColor: "lightGray",
+            borderRadius: "15px",
+            padding: "1em",
+            margin: "1em 0",
+            display: "grid",
+            gridTemplateColumns: "475px auto",
+          }}
+        >
           <ImageComponent
             src={selectedPkmn?.sprites?.other["official-artwork"].front_default}
             altText={`Official artwork for ${selectedPkmn.name}`}
