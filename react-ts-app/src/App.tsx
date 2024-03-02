@@ -1,7 +1,7 @@
 import {useState, useEffect, useMemo} from "react";
 import {NamedAPIResourceList, PokemonClient} from "pokenode-ts";
 import {Pokemon} from "./types/pokemon";
-import {Logo} from "./components/Logo";
+import {ImageComponent} from "./components/ImageComponent";
 import {MainInput} from "./components/MainInput";
 import "./App.css";
 import {SingleValue} from "react-select";
@@ -44,6 +44,7 @@ function App() {
           stats: val.stats,
           types: val.types,
         };
+        console.log("🚀 ~ pokeApi.getPokemonByName ~ foo:", foo);
 
         setSelectedPkmn(foo);
       });
@@ -52,12 +53,21 @@ function App() {
 
   return (
     <>
-      <Logo />
+      <ImageComponent
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+        styleClass="logo"
+        altText="Classic Pokemon logo in blue and yellow"
+      />
       <MainInput options={options} handleChange={handleChange} />
       {selectedPkmn && (
-        <img
-          src={selectedPkmn?.sprites?.other["official-artwork"].front_default}
-        />
+        <div style={{border: "2px solid white"}}>
+          <ImageComponent
+            src={selectedPkmn?.sprites?.other["official-artwork"].front_default}
+            altText={`Official artwork for ${selectedPkmn.name}`}
+            styleClass="mainImage"
+          />
+          {<h1>{selectedPkmn.name}</h1>}
+        </div>
       )}
     </>
   );
