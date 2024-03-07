@@ -54,14 +54,15 @@ function App() {
   return (
     <>
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "325px auto",
-          alignItems: "center",
-          backgroundColor: "lightGray",
-          borderRadius: "15px",
-          padding: "1em",
-        }}
+        className="grid grid-cols-[325px_auto] items-center bg-gray-300 rounded p-4"
+        // style={{
+        //   display: "grid",
+        //   gridTemplateColumns: "325px auto",
+        //   alignItems: "center",
+        //   backgroundColor: "lightGray",
+        //   borderRadius: "15px",
+        //   padding: "1em",
+        // }}
       >
         <ImageComponent
           src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
@@ -72,14 +73,15 @@ function App() {
       </div>
       {selectedPkmn && (
         <div
-          style={{
-            backgroundColor: "lightGray",
-            borderRadius: "15px",
-            padding: "1em",
-            margin: "1em 0",
-            display: "grid",
-            gridTemplateColumns: "475px auto",
-          }}
+          className="grid grid-cols-[475px_auto] my-5 p-4 rounded bg-gray-300"
+          // style={{
+          //   backgroundColor: "lightGray",
+          //   borderRadius: "15px",
+          //   padding: "1em",
+          //   margin: "1em 0",
+          //   display: "grid",
+          //   gridTemplateColumns: "475px auto",
+          // }}
         >
           <ImageComponent
             src={selectedPkmn?.sprites?.other["official-artwork"].front_default}
