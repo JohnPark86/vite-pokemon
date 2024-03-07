@@ -86,7 +86,7 @@ function App() {
             altText={`Official artwork for ${selectedPkmn.name}`}
             styleClass="mainImage"
           />
-          {<h1>{selectedPkmn.name}</h1>}
+          <div>{<h2>{selectedPkmn.name}</h2>}</div>
         </div>
       )}
     </>
